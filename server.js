@@ -3,7 +3,7 @@ const axios=require("axios")
 const sharp=require("sharp")
 
 const app=express()
-const PORT=3000
+const PORT=process.env.PORT||3000
 
 app.get("/image-to-rgb",async(req,res)=>{
   try{
@@ -26,4 +26,4 @@ app.get("/image-to-rgb",async(req,res)=>{
   }
 })
 
-app.listen(PORT,()=>console.log(`✅ API running on http://localhost:${PORT}`))
+app.listen(PORT,()=>console.log(`✅ API running on port ${PORT}`))
